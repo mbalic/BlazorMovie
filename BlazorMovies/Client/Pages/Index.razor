@@ -1,0 +1,29 @@
+﻿@page "/"
+
+
+<div>
+    <h3>Movie</h3>
+    <MovieList Movies="movies">
+        <NullTemplate>
+            This is loading...
+        </NullTemplate>
+        <EmptyTemplate>
+            No records
+        </EmptyTemplate>
+    </MovieList>
+</div>
+
+@code {
+
+    private List<Movie> movies;
+
+    protected override void OnInitialized()
+    {
+        movies = new List<Movie>()
+{
+        new Movie() {Id = 1, Title = "Spider Man", ReleaseDate = new DateTime(2019, 1, 1)},
+        new Movie() {Id = 2, Title = "Spider Man 2", ReleaseDate = new DateTime(2020, 1, 1)}
+        };
+    }
+
+}
